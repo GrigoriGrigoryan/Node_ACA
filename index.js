@@ -27,15 +27,7 @@ for (let i = 0; i < 10; i++) {
         power: getRandomInt(1, 11)
     });
 }
-// console.log(heroes);
-// console.log(villains);
 
-// let obj = {
-//     name: "random generated name",
-//     speed: "random number 1-5,  1- 5sec, 2-4sec, 3-3, 4- 2 sec, 5-1 sec",
-//     health: 100,
-//     power: "random 1-10"
-// }
 function villainsAttack() {
     let max = 10;
     for (let i = 0; i < villains.length; i++) {
@@ -78,24 +70,9 @@ function heroesAttack() {
                 }
             }, ((1 / (5000 - (heroes[i].speed -1) * 1000) * 5 ) * 1000), i);
        setTimeout(() => { clearInterval(timerId); }, 2000);
-    // for (let i = 0; i < heroes.length; i++) {
-    //     let int = getRandomInt(0, 10);
-    //     console.log(` ${heroes[i].name}[${heroes[i].health}] hits ${villains[int].name}[${villains[int].health}] with a power of ${heroes[i].power}`);
-    //     villains[int].health =  villains[int].health - heroes[i].power
-    // }
     }
 }
-// let i = 0;
-// Thor[90] hits Thanos[100]  with a power of 4.6
-// Iron-Man dies
 
-// while(i < 10) {
-//     villainsAttack()
-//     heroesAttack()
-//     i++;
-// }
-
-// Every character makes his next attack after (1/speed * 5 ) seconds.
 heroesAttack()
 villainsAttack()
 
@@ -118,12 +95,3 @@ if (heroes.length !== 0) {
         console.log(result); 
     }, 3000);
 }
-  
-    
-// console.log(villains);
-
-// const arr = [{asd: 'a'}, {asd2: 'b'}, {asd3: 'c'}, {asd4: 'd'}]
-
-// arr.splice(1, 1)
-// console.log(arr[1]);
-
