@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "unique-names-generator": "^4.6.0"
+  }
+}
