@@ -28,7 +28,8 @@ for (let i = 0; i < 10; i++) {
     });
 }
 
-function villainsAttack() {
+
+function villainsAttack () {
     let max = 10;
     for (let i = 0; i < villains.length; i++) {
         let int = getRandomInt(0, max);
@@ -50,6 +51,7 @@ function villainsAttack() {
         
     }
 }
+
 
 function heroesAttack() {
     let max = 10;
@@ -73,25 +75,35 @@ function heroesAttack() {
     }
 }
 
-heroesAttack()
-villainsAttack()
 
-if (heroes.length !== 0) {
+function attack() {
+    
+    let j = 0;
+    while ( j < 10) {
+        heroesAttack()
+        villainsAttack()
+        j++;     
+    }
     setTimeout(() => {
-        let result = ``;
-        console.log(`Heroes win`);
-        for (const iterator of heroes) {
-          result += `${iterator.name}[${iterator.health}]`
+        if (heroes.length !== 0) {
+        
+                let result = ``;
+                console.log(`Heroes Win`);
+                for (const iterator of heroes) {
+                  result += `${iterator.name}[${iterator.health}]`
+                }
+                console.log(result); 
+          
+        } if (villains.length !== 0) {
+    
+                let result = ``;
+                console.log(`Villians Win`);
+                for (const iterator of villains) {
+                  result += `${iterator.name}[${iterator.health}] `
+                }
+                console.log(result); 
         }
-        console.log(result); 
-    }, 3000);
-} if (villains.length !== 0) {
-    setTimeout(() => {
-        let result = ``;
-        console.log(`Villians Win`);
-        for (const iterator of villains) {
-          result += `${iterator.name}[${iterator.health}] `
-        }
-        console.log(result); 
-    }, 3000);
+    }, 3000)
 }
+
+attack()
